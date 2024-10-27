@@ -36,10 +36,11 @@ def insertion_sort(arr, colors):
         yield j + 1
 
 
-def get_color(value):
-    r = (value * 10) % 256
-    g = (value * 20) % 256
-    b = (value * 30) % 256
+def get_color(value, max_value):
+    normalized_value = value / max_value
+    r = int(normalized_value * 255)
+    g = int((1 - normalized_value) * 255)
+    b = 0  
     return (r, g, b)
 
 
@@ -61,6 +62,7 @@ def save_frame(frame_number):
 
 
 def main():
+    global max_value
     array_size = 150
     array = [random.randint(1, 100) for _ in range(array_size)]
     colors = [get_color(value) for value in array]
