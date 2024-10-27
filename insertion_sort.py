@@ -50,7 +50,7 @@ def draw_bars(arr, colors):
     bar_height = HEIGHT
 
     for i in range(len(arr)):
-        color = colors[i]
+        color = get_color(arr[i], max_value)
         pygame.draw.rect(screen,
                          color,
                          (i * bar_width, HEIGHT - bar_height, bar_width - 1, bar_height))
