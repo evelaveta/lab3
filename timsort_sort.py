@@ -112,17 +112,6 @@ def draw_bars(arr, colors):
 
     pygame.display.flip()
 
-
-def display_message(message):
-    font = pygame.font.Font(None, 74)
-    text_surface = font.render(message, True, (0, 128, 0))
-    text_rect = text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2))
-
-    screen.blit(text_surface, text_rect)
-    pygame.display.flip()
-
-    pygame.time.wait(1300)
-
 def save_frame(frame_number):
     pygame.image.save(screen, f"frame_{frame_number:04d}.png")
 
